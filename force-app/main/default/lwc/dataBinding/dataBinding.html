@@ -1,0 +1,48 @@
+<template>
+
+    <lightning-card title="Data Binding">
+<!-- Binding myName using {} -->
+        <h1>My name is {myName}</h1>
+        <h1>My age is {age}</h1>
+    </lightning-card>
+
+    <lightning-card title="On Input Handler">
+        <!-- oninput RUNS whenever there is a change in the input -->
+        <input type="text" oninput={handleInput}/>
+        <h1>Hello {dynamicBinding}</h1>
+    </lightning-card>
+
+    <lightning-card title="On Change Handler">
+        <div class="slds-p-around_medium lgc-bg">
+            <!-- 1. create input -->
+			<lightning-input 
+            type="text" 
+            label="Enter some text" 
+            onchange={handleInputChange}></lightning-input>
+		</div>
+        <!-- 3. bing the country -->
+        <h1>I am from {country}</h1>
+    </lightning-card>
+
+
+    <lightning-card title = "On Click Handler">
+
+        <lightning-button variant="success" 
+        label="Success" 
+        title="Successful action" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small"></lightning-button>
+       
+        <lightning-button variant="destructive" 
+        label="Destructive" 
+        title="Destructive action" 
+        onclick={handleClick} 
+        class="slds-m-left_x-small"></lightning-button>
+
+        <div class="slds-m-vertical_medium">
+            <p>The label of the button that was clicked is: <span class="slds-text-heading_small">{clickedButtonLabel}</span></p>
+        </div>
+
+    </lightning-card>
+    
+</template>

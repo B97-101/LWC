@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Conditional Rendering">
+
+        <h1>Outside of the if true directive</h1>
+        <!-- we must use templete tag for condional rendering -->
+        <template if:true={flag}>
+            <h1>This tag will be visible when flag is true</h1>
+        </template>
+
+        <template if:false={flag1}>
+            <h1>This tag will be visible when flag1 is false</h1>
+        </template>
+
+    </lightning-card>
+
+
+    <lightning-card title="Checkbox Rendering">
+
+        <lightning-input type="checkbox" label="Check the checkbox to sign aggreement" 
+        name="input1"
+        onchange={handleChange}
+        checked={display}></lightning-input>
+
+        <!-- show the text when display = true(checkbox is checked) -->
+        <template if:true={display}>
+            <h1>Thank you for accepting the agreement</h1>
+        </template>
+
+        <!-- show the text when display = false(checkbox is NOT checked) -->
+        <template if:false={display}>
+            <h1>Please accept the aggreement</h1>
+        </template>
+
+    </lightning-card>
+    
+</template>

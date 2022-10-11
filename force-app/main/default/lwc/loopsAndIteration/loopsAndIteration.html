@@ -1,0 +1,16 @@
+<template>
+
+    <lightning-card title="For Each">
+
+        {cityList}
+
+
+        <!-- using for each -->
+        <template for:each={cityList} for:item="eachCity">
+            <p key={eachCity}>{eachCity}</p>
+        </template>
+
+    </lightning-card>
+  
+    
+</template>
