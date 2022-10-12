@@ -1,16 +1,68 @@
 <template>
 
     <lightning-card title="For Each">
-
         {cityList}
-
-
         <!-- using for each -->
-        <template for:each={cityList} for:item="eachCity">
-            <p key={eachCity}>{eachCity}</p>
-        </template>
+        <ul class="slds-list_dotted">
+            <template for:each={cityList} for:item="eachCity">
+                <li key={eachCity}>{eachCity}</li>
+                <!-- <p key={eachCity}>{eachCity}</p> -->
+            </template>
+        </ul>
+    </lightning-card>
+
+
+    <lightning-card title="My Fav Customers">
+        <ul class="slds-has-dividers_around">
+            <template for:each={customerList} for:item="eachCustomer">
+                <li class="slds-item" key={eachCustomer.id}>{eachCustomer.name}</li>
+                <li class="slds-item" key={eachCustomer.id}>{eachCustomer.phone}</li>
+                <li class="slds-item" key={eachCustomer.id}>{eachCustomer.email}</li>
+                <li class="slds-item" key={eachCustomer.id}>
+                    <img src={eachCustomer.imgURL}/>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+
+
+    <lightning-card title="Iterator : it">
+        <!-- it.value HOLDS EACH DATA IN THE ARRAYS -->
+        <ul class="slds-list_dotted">
+            <template iterator:it={cityList}>
+                <li key={it.value}>{it.value}</li>
+            </template>
+        </ul>
+    </lightning-card>
+
+    <lightning-card title="My Fav Customers with ITERATOR">
+        <ul class="slds-has-dividers_around">
+            <template iterator:it={customerList}>
+                <!-- it.value.id HOLDS EACH id OF THE OBJECT -->
+                <li class="slds-item" key={it.value.id}>{it.value.name}</li>
+                <li class="slds-item" key={it.value.id}>{it.value.phone}</li>
+                <li class="slds-item" key={it.value.id}>{it.value.email}</li>
+                <li class="slds-item" key={it.value.id}>
+                    <img src={it.value.imgURL}/>
+                </li>
+            </template>
+        </ul>
+    </lightning-card>
+
+
+    <lightning-card title="First and Last item">
+        <ul class="slds-has-dividers_around">
+            <template iterator:it={cityList}>
+                <!-- GETTING THE FIRST ITEM ONLY 
+                    if:true={it.first} returns true for ONLY the FIRST ITEM
+                    if:true={it.last} returns true for ONLT the LAST ITEM
+                -->
+                <li key={it.value} if:true={it.first}>FIRST : {it.value}</li>
+                <li key={it.value} if:true={it.last}>LAST : {it.value}</li>
+            </template>
+
+        </ul>
 
     </lightning-card>
-  
     
 </template>
