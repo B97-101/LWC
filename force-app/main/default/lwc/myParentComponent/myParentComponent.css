@@ -1,0 +1,22 @@
+h1{
+    color: red;
+    background-color: chartreuse;
+}
+
+p{
+    color: blue;
+    background-color: yellow;
+}
+
+/* NOTE: We can apply same style to all of hte elements in
+the child component */
+c-my-child-component{
+    /* color: purple; */
+
+    /* We are able to override the child default css values
+    using custom hooks 
+    This css will apply specific child element*/
+    --custom-bg-color :yellow;
+    --custom-color : red;
+
+}

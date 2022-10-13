@@ -2,15 +2,27 @@
 
     <lightning-card title="My Parent Component">
 
+        <!-- h1 is an element -->
         <h1>This is Parent Header</h1>
+        <!-- p is an element -->
         <p>This is Parent Paragraph</p>
     
         <!-- Calling another component in this component 
         Change ONLY parent meta file and deploy
         Right click on child and deploy 
         Then righ click on parent and deploy-->
+        <!-- c-my-child-component is a component -->
         <c-my-child-component></c-my-child-component>
 
+        <h1>This is also in the parent</h1>
+        <p>This is also in the parent</p>
+
+
+        <!-- we can use child componetn in the parent more than once -->
+        <c-my-child-component></c-my-child-component>
+
+
+        <h2>Parent Header 2</h2>
 
     </lightning-card>
 

@@ -1,0 +1,15 @@
+h1{
+    color: pink;
+    background-color: black;
+}
+
+/* Creating Custom CSS Hooks
+I can assign the value in the parent 
+And override the current value from parent
+*/
+h2{
+    /* creating a reusable --custom-bg-color hooks for background color */
+    background-color: var(--custom-bg-color,green);
+    /* creating a reusable --custom-color hooks for color */
+    color: var( --custom-color,antiquewhite);
+}
