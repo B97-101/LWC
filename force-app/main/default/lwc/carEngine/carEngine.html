@@ -1,18 +1,18 @@
 <template>
-
     <lightning-card title="Car Engine">
-
-        <h1>Model V8</h1>
-
-        <!-- Calling carEngineFeatures component 
+        <h1>Model {engineModel}</h1>
+        <h1>Year {modelYear}</h1>
+         <!-- Calling carEngineFeatures component 
         To override the child property from parent
         call child propert in the opening tag
         and assign a new value.
-        Make sure property is in kebab case
+        Make sure property is in kebab case 
         CHILD: horsePower -> PARENT: horse-power
         -->
-        <c-car-engine-features horse-power="770 hp"></c-car-engine-features>
-
+        <c-car-engine-features 
+        horse-power="770 hp" 
+        fuel-type="Hybrid!">
+        </c-car-engine-features>
     </lightning-card>
     
 </template>

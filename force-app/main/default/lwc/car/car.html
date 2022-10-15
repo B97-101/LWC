@@ -1,14 +1,42 @@
 <template>
-
     <lightning-card title="Car">
-
         <h1>Tesla</h1>
 
-        <!-- calling carEngine compoent -->
-        <c-car-engine></c-car-engine>
 
-        <!-- calling carEngineFeature -->
-        <c-car-engine-features></c-car-engine-features>
+
+        <!-- creating a lighting input -->
+        <lightning-input 
+        type="text" 
+        label="Engine Type" 
+        onchange={handleEngineChange}>
+        </lightning-input>
+
+        <!-- Engine Type -->
+        <h1>Engine Type : {engineType}</h1>
+
+        <!-- calling carEngine component 
+            engine-model={engineType} -> ASSIGNING ENGINE TYPE TO ENGINE MODEL
+            engine-model -> CHILD PROPERTY
+            engineType -> PARENT PROPERTY
+        -->
+        <c-car-engine 
+        engine-model={engineType} 
+        model-year="2001"> 
+        </c-car-engine>
+
+        <!-- calling carEngineFeatures component 
+        Assiging a new value to maxSpeed property
+    Note: This change is unue to this component
+The original values will not be affeceted by this code
+speed will show this updated value-->
+        <c-car-engine-features max-speed="160 MPH">
+        </c-car-engine-features>
+
+        <!-- calling car engine feature one more time 
+        Speed will show the original value-->
+        <c-car-engine-features>
+        </c-car-engine-features>
+        
     </lightning-card>
-    
+
 </template>
