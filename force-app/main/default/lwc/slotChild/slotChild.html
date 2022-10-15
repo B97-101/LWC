@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Slot Child Component">
+
+        <h1>3. Child Header!</h1>
+        <p>4. Child Paregraph!</p>
+
+        <!-- using slot to show the elements 
+        unnamed stors are used to show all codes
+        To show specific elements individually, 
+        we must use NAMED SLOTS
+        -->
+        <slot></slot>
+
+        <!-- CALLIGN NAMED SLOT -->
+        <h1>NAMED SLOT ELEMENT : <span><slot name="header2"></slot></span></h1>
+
+    </lightning-card>
+</template>
