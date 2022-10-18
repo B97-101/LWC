@@ -65,7 +65,7 @@
         <ul>
             <template for:each={familyMembers} for:item="eachMember">
                 <!--Whenever we use for:each or iterator, then we must use key property for unique identification  -->
-                <li key={eachMember.id}>First Name : {eachMember.fName}. Id : {eachMember.id}</li>
+                <li key={eachMember.id}>First Name : <span style="color: red;">{eachMember.fName}</span>. Id : <span style="color: purple;">{eachMember.id}</span></li>
             </template>
         </ul>
 
