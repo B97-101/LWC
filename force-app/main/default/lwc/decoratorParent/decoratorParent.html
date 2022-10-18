@@ -1,0 +1,78 @@
+<template>
+
+    <lightning-card title="Parent">
+        <!-- calling childDecorator component 
+        Use firstName property in here. 
+        In this case, I must make firstName public 
+        My name is Sam-->
+        <c-decorator-child first-name="Sam"></c-decorator-child>
+        <!-- My Name is Tim -->
+        <c-decorator-child first-name="Tim"></c-decorator-child>
+        <!-- My Name is  John-->
+        <c-decorator-child></c-decorator-child>
+    </lightning-card>
+
+
+    <!-- TRACK DECORATOR NOT NEEDED-->
+    <lightning-card title="@TRACK 1">
+
+        <lightning-input
+        type="text"
+        label="Enter First Name"
+        placeholder="Please enter your name"
+        onchange={handleChange}>
+        </lightning-input>
+
+        <div>Thank you <span style="color: red; 
+            font-weight: bold; 
+            font-family: Brush Script MT">{myName}</span></div>
+
+    </lightning-card>
+
+    <!-- TRACK DECORATOR FOR OBJECT -->
+    <lightning-card title="@TRACK 2">
+
+        <!-- input 1 is used to enter Name -->
+        <lightning-input
+        type="text"
+        label="Name:"
+        placeholder="Please enter your name"
+        onchange={handleNameChange}>
+        </lightning-input>
+        <!-- input 2 is used to entr Age -->
+        <lightning-input
+        type="number"
+        label="Age:"
+        placeholder="Please enter your age"
+        onchange={handleAgeChange}>
+        </lightning-input>
+        <!-- printing the name and age of the person -->
+        <div>Person Name : <span style="color:cornsilk; background-color:blueviolet">{person.fName}</span></div>
+        <div>Person Age : <span style="color:cornsilk; background-color:blueviolet">{person.age}</span></div>
+    </lightning-card>
+
+
+    <!-- @TRACK DECORATOR FOR ARRAYS -->
+    <lightning-card title="Family Members">
+
+        <lightning-input
+        type="text"
+        label="Add Family Members"
+        placeholder="Please enter new family member"
+        onblur={handleFamilyMember}>
+        </lightning-input> 
+        
+        <ul>
+            <template for:each={familyMembers} for:item="eachMember">
+                <!--Whenever we use for:each or iterator, then we must use key property for unique identification  -->
+                <li key={eachMember.id}>First Name : {eachMember.fName}. Id : {eachMember.id}</li>
+            </template>
+        </ul>
+
+
+    </lightning-card>
+
+
+
+    
+</template>

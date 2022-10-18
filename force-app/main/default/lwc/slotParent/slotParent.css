@@ -1,0 +1,17 @@
+h1{
+    color: red;
+}
+
+/* apply the p that in ONLY under  c-slot-child*/
+c-slot-child p{
+    color: purple;
+    background-color: yellow;
+    border: 2px solid green;
+    
+}
+
+.my-h2-style{
+
+    color: brown;
+    background-color: violet;
+}
