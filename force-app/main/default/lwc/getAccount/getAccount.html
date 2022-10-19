@@ -1,0 +1,14 @@
+<template>
+
+    <lightning-card title ="Wire Decorator">
+        <lightning-input type="text" label="Search Account" onchange={handleChange}></lightning-input>
+
+        <ul>
+            <!-- accounts.data returns the list of accounts data -->
+            <template for:each={accounts.data} for:item="eachAccount">
+                    <li key={eachAccount.Id}>{eachAccount.Name}</li>
+            </template>
+        </ul>
+    </lightning-card>
+    
+</template>
