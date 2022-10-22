@@ -1,0 +1,25 @@
+<template>
+
+    <lightning-card title="Setter">
+
+        <lightning-input type="text" label="Enter New Age" onchange={updateAge}></lightning-input>
+
+        <h1>Name : {name}</h1>
+        <h1>My Age : {age}</h1>
+        <h1>Brothers Age : {age1}</h1>
+
+        <lightning-button label="Update Age" onclick={updateOriginalAge}></lightning-button>
+
+    </lightning-card>
+
+    <lightning-card title="Calling Setter Child">
+
+        <!-- calling the child componennt to update this child property from parent
+        we are updating the value using setter in the child
+        customerAge is the child setter  -->
+        <c-setter-child1 customer-age="15"></c-setter-child1>
+
+    </lightning-card>
+
+    
+</template>
