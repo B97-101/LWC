@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Parent Component">
+
+        <lightning-layout>
+
+            <!-- For child 1 component -->
+            <lightning-layout-item padding = "around-small">
+               <!-- call child1 component 
+                Use custom event to LISTEN the child-->
+               <c-child1 onclicked={handleButtonClick1}></c-child1>
+               <!-- {eventName1} will be visible only after child button is clicked -->
+               <div>Event Name 1 : {eventName1}</div>
+            </lightning-layout-item>
+
+            <!-- For child 2 component -->
+            <lightning-layout-item>
+                <c-child2 onclicked2={handleButtonClick2}></c-child2>
+                <div>Event Name 2 : {eventName2}</div>
+
+            </lightning-layout-item>
+
+
+        </lightning-layout>
+
+
+    </lightning-card>
+    
+</template>
