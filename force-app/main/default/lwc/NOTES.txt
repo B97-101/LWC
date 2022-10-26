@@ -1,0 +1,42 @@
+**********PUBSUB**********
+1. In lwc, create a folder : pubsub
+2. In pubsub folder, create a new file : pubsub.js. And copy-paste the code.
+3. In pubsub folder, create a new meta file : pubsub.js-meta.xml, and add copy-paste the code
+***The configuration is done
+4. Create 2 components : parentPublisher, childSubscriber
+4. Complete Publisher.html
+5. Complete Publisher.js
+6. Complete Subcriber.html
+7. Configure BOTH meta files and deploy. Make sure to deploy the pubsub folder first
+************LMS***********
+1. In default, create a folder : messageChannels
+2. In messageChannels, create a new file : MessageChannel.messageChannel-meta.xml And add the code:
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- name of the channel -->
+    <masterLabel>MessageChannel</masterLabel>
+    <!-- making this usable -->
+    <isExposed>true</isExposed>
+    <!-- description -->
+    <description>Message Channel to pass data</description>
+    <!-- Message Fields are used tp pass the data
+    We can create multiple fields to pass multiple data 
+    fieldName should be unique-->
+    <lightningMessageFields>
+        <fieldName>lmsData</fieldName>
+        <description>This is the field to pass data</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
+3. In package.xml, add the type = LightningMessageChannel, so the project can use that configuration type
+    <types>
+        <members>*</members>
+        <name>LightningMessageChannel</name>
+    </types>
+***Configuration is done!
+4. Create 2 components : lms1, lms2
+5. Complete lms1.html
+6. Complete lms1.js
+7. Complete lms2.html
+8. Complete lms2.js
+9. Deploy Both of the codes and test
+

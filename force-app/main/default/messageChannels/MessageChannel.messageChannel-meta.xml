@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <!-- name of the channel -->
+    <masterLabel>MessageChannel</masterLabel>
+    <!-- making this usable -->
+    <isExposed>true</isExposed>
+    <!-- description -->
+    <description>Message Channel to pass data</description>
+    <!-- Message Fields are used tp pass the data
+    We can create multiple fields to pass multiple data 
+    fieldName should be unique-->
+    <lightningMessageFields>
+        <fieldName>lmsData</fieldName>
+        <description>This is the field to pass data</description>
+    </lightningMessageFields>
+</LightningMessageChannel>
