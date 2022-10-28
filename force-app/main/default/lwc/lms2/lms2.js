@@ -9,6 +9,7 @@ export default class Lms2 extends LightningElement {
     @wire(MessageContext) context;
     // holding the data that is coming from other components and show this in html file
     receivedMessage;
+    subscription;
 
     // get called during the data is added to the page
     connectedCallback(){
@@ -27,7 +28,13 @@ export default class Lms2 extends LightningElement {
 
     handleMessage(message){
         //write logic for message
-        this.recievedMessage = message && message.lmsData && message.lmsData.value ? message.lmsData.value:'No Message'
+        this.receivedMessage = message && message.lmsData && message.lmsData.value ? message.lmsData.value:'No Message'
+    }
+
+    
+    unsubscribeMessage(){
+        unsubscribe(this.subscription)
+        this.subscription = null
     }
 
 
